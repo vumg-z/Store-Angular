@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/Product';
 import { CartService } from '../service/CartService';
-import { ReceiptService } from '../service/ReceiptService'; // Assuming ReceiptService is being used
+import { ReceiptService } from '../service/ReceiptService';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-shopping-cart',
-  templateUrl: './components_html/product_catalog.html', // Make sure this path is correct
-  styleUrls: ['./productcomponent.css'] // Make sure this path is correct
+  standalone: true, // Mark the component as standalone
+  templateUrl: '../components_html/shopping_cart.html', // Ensure the path is correct
+  styleUrls: ['../components_css/shoppingcart.css'], // Ensure the path is correct
+  imports: [CommonModule], // Import CommonModule to use Angular directives like *ngFor
 })
 export class ShoppingCartComponent implements OnInit {
   products: Product[] = [];
@@ -17,39 +20,29 @@ export class ShoppingCartComponent implements OnInit {
     private receiptService: ReceiptService
   ) {}
 
-  // Initialization logic
   ngOnInit() {
-    this.products = this.cartService.getItems(); // Fetch items from the cart
-    this.total = this.cartService.getTotalPrice(); // Fetch the total price
+    this.products = this.cartService.getItems();
+    this.total = this.cartService.getTotalPrice();
   }
 
-  // Remove product from the cart
   removeFromCart(productId: number) {
-    this.cartService.removeItem(productId); // Remove the item
-    this.updateCart(); // Update the cart view
+    this.cartService.removeItem(productId);
+    this.updateCart();
   }
 
-  // Update cart values (total, items)
   updateCart() {
-    this.products = this.cartService.getItems(); // Get the updated items
-    this.total = this.cartService.getTotalPrice(); // Update the total price
+    this.products = this.cartService.getItems();
+    this.total = this.cartService.getTotalPrice();
   }
 
-  // Add product to the cart
   addToCart(product: Product) {
-    this.cartService.addToCart(product); // Add product to the cart
-    this.updateCart(); // Update cart
+    this.cartService.addToCart(product);
+    this.updateCart();
   }
 
-  // Checkout logic
   checkout() {
-    // Generate the receipt using the ReceiptService
     this.receiptService.generateReceipt(this.products, this.total);
-    
-    // Clear the cart after checkout
     this.cartService.clearCart();
-    
-    // Update cart view after clearing
     this.updateCart();
   }
 }

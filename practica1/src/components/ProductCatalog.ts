@@ -23,6 +23,7 @@ export class ProductCatalogComponent {
 
   // Add a product to the cart
   addToCart(product: Product) {
+    // console.log("si")
     this.cartService.addToCart(product);
   }
 }

@@ -3,7 +3,7 @@
 <div *ngIf="products.length > 0; else emptyCart">
   <div *ngFor="let product of products">
     <h3> {{ product.name }} </h3>
-    <p> Descripción: {{ product.description }} </p>
+    <p> Descripción: {{ product.descripcion }} </p>
     <p> Precio: {{ product.price | currency }} </p>
     <p> Cantidad: {{ product.quantity }} </p>
     <button (click)="removeFromCart(product.id)"> Eliminar </button>

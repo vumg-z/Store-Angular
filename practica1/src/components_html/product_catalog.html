@@ -1,6 +1,6 @@
 <div *ngFor="let product of products">
     <h2> Titulo del producto: {{ product.name }} </h2>
-    <p> Descripcion: {{ product.description }} </p>
+    <p> Descripcion: {{ product.descripcion }} </p>
     <p> Precio: {{ product.price | currency }} </p>
     <button (click)="addToCart(product)"> Añadir al carrito </button>
   </div>
