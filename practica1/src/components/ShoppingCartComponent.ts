@@ -6,10 +6,10 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-shopping-cart',
-  standalone: true, // Mark the component as standalone
-  templateUrl: '../components_html/shopping_cart.html', // Ensure the path is correct
-  styleUrls: ['../components_css/shoppingcart.css'], // Ensure the path is correct
-  imports: [CommonModule], // Import CommonModule to use Angular directives like *ngFor
+  standalone: true, 
+  templateUrl: '../components_html/shopping_cart.html', 
+  styleUrls: ['../components_css/shoppingcart.css'], 
+  imports: [CommonModule], 
 })
 export class ShoppingCartComponent implements OnInit {
   products: Product[] = [];

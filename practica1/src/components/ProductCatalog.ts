@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-product-catalog',
   standalone: true,
-  imports: [CommonModule], // Import CommonModule to use Angular directives like *ngFor
+  imports: [CommonModule], 
   templateUrl: '../components_html/product_catalog.html',
   styleUrls: ['../components_css/productcomponent.css']
 })
@@ -21,7 +21,6 @@ export class ProductCatalogComponent {
 
   constructor(private cartService: CartService) {}
 
-  // Add a product to the cart
   addToCart(product: Product) {
     // console.log("si")
     this.cartService.addToCart(product);

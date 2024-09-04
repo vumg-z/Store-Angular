@@ -3,6 +3,6 @@ import { ShoppingCartComponent } from '../components/ShoppingCartComponent';
 import { ProductCatalogComponent } from '../components/ProductCatalog';
 
 export const routes: Routes = [
-  { path: '', component: ProductCatalogComponent }, // Default route
-  { path: 'cart', component: ShoppingCartComponent } // Route for the shopping cart
+  { path: '', component: ProductCatalogComponent }, 
+  { path: 'cart', component: ShoppingCartComponent } 
 ];

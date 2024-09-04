@@ -6,9 +6,9 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive], // RouterOutlet is required here for routing to work
+  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive], 
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'] // Corrected the typo in 'styleUrls'
+  styleUrls: ['./app.component.css'] 
 })
 export class AppComponent {
   title = 'practica1';

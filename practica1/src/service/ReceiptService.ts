@@ -6,7 +6,6 @@ import { Injectable } from '@angular/core';
 })
 export class ReceiptService {
   generateReceipt(items: Product[], total: number): void {
-    // Start creating the receipt content as a string (XML or any format you like)
     let receiptContent = '<?xml version="1.0" encoding="UTF-8"?>\n';
     receiptContent += '<receipt>\n';
     receiptContent += '  <items>\n';
@@ -24,7 +23,6 @@ export class ReceiptService {
     receiptContent += `  <total>${total}</total>\n`;
     receiptContent += '</receipt>';
 
-    // Download the generated receipt as a file
     this.downloadFile(receiptContent, 'receipt.xml', 'text/xml');
   }
 
@@ -39,7 +37,6 @@ export class ReceiptService {
     document.body.appendChild(a);
     a.click();
 
-    // Cleanup: revoke the URL and remove the temporary element
     setTimeout(() => {
       window.URL.revokeObjectURL(url);
       document.body.removeChild(a);
