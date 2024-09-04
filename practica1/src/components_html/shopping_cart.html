@@ -1,0 +1,18 @@
+<h2> Carrito de compras </h2>
+
+<div *ngIf="products.length > 0; else emptyCart">
+  <div *ngFor="let product of products">
+    <h3> {{ product.name }} </h3>
+    <p> Descripción: {{ product.description }} </p>
+    <p> Precio: {{ product.price | currency }} </p>
+    <p> Cantidad: {{ product.quantity }} </p>
+    <button (click)="removeFromCart(product.id)"> Eliminar </button>
+  </div>
+
+  <h3> Total: {{ total | currency }} </h3>
+  <button (click)="checkout()"> Realizar compra </button>
+</div>
+
+<ng-template #emptyCart>
+  <p> El carrito está vacío. </p>
+</ng-template>
