@@ -1,7 +1,8 @@
-<div *ngFor="let product of products">
-    <h2> Titulo del producto: {{ product.name }} </h2>
-    <p> Descripcion: {{ product.descripcion }} </p>
-    <p> Precio: {{ product.price | currency }} </p>
-    <button (click)="addToCart(product)"> Añadir al carrito </button>
-  </div>
-  
+<div *ngFor="let product of products" style="background-color: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+  <h2 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 10px;">Titulo del producto: {{ product.name }}</h2>
+  <p style="color: #666; margin-bottom: 10px;">Descripcion: {{ product.descripcion }}</p>
+  <p style="font-size: 1.25rem; font-weight: bold; margin-bottom: 15px;">Precio: {{ product.price | currency }}</p>
+  <button (click)="addToCart(product)" style="background-color: #3490dc; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: background-color 0.2s ease-in-out;">
+    Añadir al carrito
+  </button>
+</div>

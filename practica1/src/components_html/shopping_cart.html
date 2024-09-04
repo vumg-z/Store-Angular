@@ -1,18 +1,26 @@
-<h2> Carrito de compras </h2>
+<h2 style="text-align: center; font-size: 2rem; font-weight: bold; margin-bottom: 20px;">Carrito de compras</h2>
 
-<div *ngIf="products.length > 0; else emptyCart">
-  <div *ngFor="let product of products">
-    <h3> {{ product.name }} </h3>
-    <p> Descripción: {{ product.descripcion }} </p>
-    <p> Precio: {{ product.price | currency }} </p>
-    <p> Cantidad: {{ product.quantity }} </p>
-    <button (click)="removeFromCart(product.id)"> Eliminar </button>
+<div *ngIf="products.length > 0; else emptyCart" style="max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 10px;">
+  <div *ngFor="let product of products" style="border-bottom: 1px solid #ddd; padding: 15px 0; display: flex; justify-content: space-between; align-items: center;">
+    <div>
+      <h3 style="font-size: 1.25rem; font-weight: bold;">{{ product.name }}</h3>
+      <p style="color: #666;">Descripción: {{ product.descripcion }}</p>
+      <p style="font-weight: bold;">Precio: {{ product.price | currency }}</p>
+      <p style="color: #888;">Cantidad: {{ product.quantity }}</p>
+    </div>
+    <button (click)="removeFromCart(product.id)" style="background-color: #e3342f; color: white; padding: 8px 15px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: background-color 0.2s ease-in-out;">
+      Eliminar
+    </button>
   </div>
 
-  <h3> Total: {{ total | currency }} </h3>
-  <button (click)="checkout()"> Realizar compra </button>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+    <h3 style="font-size: 1.5rem; font-weight: bold;">Total: {{ total | currency }}</h3>
+    <button (click)="checkout()" style="background-color: #38c172; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: background-color 0.2s ease-in-out;">
+      Realizar compra
+    </button>
+  </div>
 </div>
 
 <ng-template #emptyCart>
-  <p> El carrito está vacío. </p>
+  <p style="text-align: center; font-size: 1.5rem; color: #888;">El carrito está vacío.</p>
 </ng-template>
