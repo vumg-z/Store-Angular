@@ -36,9 +36,13 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   addToCart(product: Product) {
+    if (!product.quantity || product.quantity <= 0) {
+      product.quantity = 1; 
+    }
     this.cartService.addToCart(product);
     this.updateCart();
   }
+  
 
   checkout() {
     this.receiptService.generateReceipt(this.products, this.total);

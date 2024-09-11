@@ -23,7 +23,6 @@ export class ProductCatalogComponent implements OnInit {
     private productCatalogService: ProductCatalogService // Inject the ProductCatalogService
   ) {}
 
-  // Fetch the products when the component is initialized
   ngOnInit() {
     this.productCatalogService.getProducts().subscribe(data => {
       this.products = data;

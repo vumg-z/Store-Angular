@@ -33,7 +33,8 @@ export class ProductCatalogService {
         id: product.getElementsByTagName('id')[0]?.textContent || '',
         name: product.getElementsByTagName('name')[0]?.textContent || '',
         price: parseFloat(product.getElementsByTagName('precio')[0]?.textContent || '0'),
-        descripcion: product.getElementsByTagName('descripcion')[0]?.textContent || 'desc' 
+        descripcion: product.getElementsByTagName('descripcion')[0]?.textContent || 'desc',
+        quantity: 1
       };
     });
   }
