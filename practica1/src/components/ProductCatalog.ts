@@ -3,13 +3,13 @@ import { Product } from '../models/Product';
 import { CartService } from '../service/CartService';
 import { ProductCatalogService } from '../service/ProductCatalogService';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; // Add FormsModule for ngModel
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'app-product-catalog',
   standalone: true,
-  imports: [CommonModule, FormsModule], // No need for HttpClientModule anymore
+  imports: [CommonModule, FormsModule], 
   templateUrl: '../components_html/product_catalog.html',
   styleUrls: ['../components_css/productcomponent.css']
 })
@@ -20,7 +20,7 @@ export class ProductCatalogComponent implements OnInit {
 
   constructor(
     private cartService: CartService,
-    private productCatalogService: ProductCatalogService // Inject the ProductCatalogService
+    private productCatalogService: ProductCatalogService 
   ) {}
 
   ngOnInit() {
@@ -35,23 +35,6 @@ export class ProductCatalogComponent implements OnInit {
     this.cartService.addToCart(product);
   }
 
-  // Method to open the modal and set the selected product
-  openModal(product: Product) {
-    this.selectedProduct = product;
-    const modal = document.getElementById('priceModal');
-    if (modal) {
-      modal.classList.remove('hidden');
-    }
-  }
-
-  // Method to close the modal
-  closeModal() {
-    const modal = document.getElementById('priceModal');
-    if (modal) {
-      modal.classList.add('hidden');
-    }
-    this.newPrice = 0;  // Reset the price input when closing
-  }
 
   // Method to modify the price of the selected product
   modifyProductPrice(id: number, newPrice: number) {
@@ -64,7 +47,6 @@ export class ProductCatalogComponent implements OnInit {
     if (product) {
       product.price = newPrice;
       console.log(`Price of ${product.name} updated to ${product.price}`);
-      this.closeModal(); // Close modal after updating price
     } else {
       console.log(`Product with ID ${id} not found`);
     }

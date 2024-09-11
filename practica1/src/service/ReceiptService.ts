@@ -10,7 +10,6 @@ export class ReceiptService {
     receiptContent += '<receipt>\n';
     receiptContent += '  <items>\n';
 
-    // Iterate over the items and add each one to the receipt
     items.forEach((item) => {
       receiptContent += `    <item>\n`;
       receiptContent += `      <name>${item.name}</name>\n`;
