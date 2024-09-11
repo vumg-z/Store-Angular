@@ -1,0 +1,32 @@
+<catalog>
+  <product>
+    <id>1</id>
+    <name>Arduino Leonardo</name>
+    <precio>25</precio>
+    <descripcion> Leonardo </descripcion>
+  </product>
+
+  <product>
+    <id>2</id>
+    <name>TV</name>
+    <precio>150.00</precio>
+    <descripcion> TV </descripcion>
+
+  </product>
+
+  <product>
+    <id>3</id>
+    <name>Skateboard</name>
+    <precio>50.00</precio>
+    <descripcion> Skeit </descripcion>
+
+  </product>
+
+  <product>
+    <id>4</id>
+    <name>Laptop</name>
+    <precio>1000.00</precio>
+    <descripcion> Lap </descripcion>
+
+  </product>
+</catalog>

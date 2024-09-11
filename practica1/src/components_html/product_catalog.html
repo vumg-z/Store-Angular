@@ -5,4 +5,11 @@
   <button (click)="addToCart(product)" style="background-color: #3490dc; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: background-color 0.2s ease-in-out;">
     Añadir al carrito
   </button>
+
+  <!-- PRACTICA2 -->
+  <input type="number" [(ngModel)]="newPrice" placeholder="Nuevo Precio" style="margin-right: 10px;">
+  <button (click)="modifyProductPrice(product.id, newPrice)" style="background-color: #f39c12; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: background-color 0.2s ease-in-out;">
+    Modificar Precio
+  </button>
+
 </div>
