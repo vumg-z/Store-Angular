@@ -20,6 +20,7 @@ export class ReceiptService {
 
     receiptContent += '  </items>\n';
     receiptContent += `  <total>${total}</total>\n`;
+    receiptContent += `  <impuestos>${total * .16}</impuestos>\n`;
     receiptContent += '</receipt>';
 
     this.downloadFile(receiptContent, 'receipt.xml', 'text/xml');

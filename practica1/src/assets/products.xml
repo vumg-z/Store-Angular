@@ -1,14 +1,14 @@
 <catalog>
   <product>
     <id>1</id>
-    <name>Arduino Leonardo</name>
+    <name>Taco de Bisteck</name>
     <precio>25</precio>
     <descripcion> Leonardo </descripcion>
   </product>
 
   <product>
     <id>2</id>
-    <name>TV</name>
+    <name>Tacos De Al Pastor</name>
     <precio>150.00</precio>
     <descripcion> TV </descripcion>
 
