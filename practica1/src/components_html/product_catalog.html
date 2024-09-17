@@ -2,15 +2,15 @@
   <h2 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 10px;">Titulo del producto: {{ product.name }}</h2>
   <p style="color: #666; margin-bottom: 10px;">Descripcion: {{ product.descripcion }}</p>
   <p style="font-size: 1.25rem; font-weight: bold; margin-bottom: 15px;">Precio: {{ product.price | currency }}</p>
- 
-  <button (click)="addToCart(product)" style="background-color: #3490dc; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: background-color 0.2s ease-in-out;">
+  <img src="../assets/taco.png" style="width: 12em;" alt="">
+  <button (click)="addToCart(product)" style="background-color: #e27611; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: background-color 0.2s ease-in-out;">
     Añadir al carrito
   </button>
 
   <!-- PRACTICA2 -->
-  <input type="number" [(ngModel)]="newPrice" placeholder="Nuevo Precio" style="margin-right: 10px;">
+  <!-- <input type="number" [(ngModel)]="newPrice" placeholder="Nuevo Precio" style="margin-right: 10px;">
   <button (click)="modifyProductPrice(product.id, newPrice)" style="background-color: #f39c12; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: background-color 0.2s ease-in-out;">
     Modificar Precio
-  </button>
+  </button> -->
 
 </div>
